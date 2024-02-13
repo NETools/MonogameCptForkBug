@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <TieredCompilation>false</TieredCompilation>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>MonogameCptForkBug</RootNamespace>
+  </PropertyGroup>
+   <ItemGroup>
+    <None Remove=".gitignore" />
+    <None Remove="Content\ShaderSampleGL.mgcb" />
+    <None Remove="Content\bin\**" />
+    <None Remove="Directory.Build.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\ContentManager.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Content.Builder.Task.Compute" Version="3.8.2" />
+    <PackageReference Include="MonoGame.Framework.Compute.WindowsDX" Version="3.8.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <TrimmerRootAssembly Include="Microsoft.Xna.Framework.Content.ContentTypeReader" Visible="false" />
+  </ItemGroup>
+</Project>

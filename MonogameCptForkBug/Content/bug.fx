@@ -28,7 +28,7 @@ VertexShaderOutput MainVS(in VertexShaderInput input)
 float4 MainPS(VertexShaderOutput input) : SV_TARGET
 {
     InterlockedMax(buffer1[input.Id], 1000);
-    //buffer2[0] = 0xff; // when setting this, the bug occurs!.
+    //buffer2[0] = 0xabc; // when writing to this buffer, the bug occurs!.
 	
     return float4(1, 0, 0, 1);
 }
